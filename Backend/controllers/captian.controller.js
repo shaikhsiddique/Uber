@@ -28,7 +28,7 @@ module.exports.registerCaptian = async (req, res,next) => {
             secure: process.env.NODE_ENV === 'production',
         });
 
-        return res.status(201).json({ message: "Captain registered successfully.", captain });
+        return res.status(201).json({ message: "Captain registered successfully.", captain,token });
         next();
     } catch (err) {
         return res.status(500).json({ message: err.message });
@@ -84,5 +84,9 @@ module.exports.logoutCaptian = async (req, res, next) => {
 };
 
 module.exports.getCaptianProfile = async (req,res,next)=>{
+   try {
     res.status(200).json(req.captain);
+   } catch (error) {
+    return res.status(500).json({ message: err.message });
+   }
 }

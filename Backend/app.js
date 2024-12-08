@@ -10,14 +10,19 @@ const userRoutes = require('./routes/user.routes');
 const captianRoutes = require('./routes/captian.routes');
 
 connectToDb();
-
 dotenv.config();
-app.use(cors());
+const corsOptions = {
+    origin: 'http://localhost:5173',  
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,  
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookie_parser());
 
-app.use("/users",userRoutes);
+app.use("/user",userRoutes);
 app.use("/captian",captianRoutes);
 
 

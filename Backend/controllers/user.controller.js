@@ -92,5 +92,9 @@ module.exports.logoutUser = async (req, res, next) => {
 };
 
 module.exports.getUserProfile = (req,res,next)=>{
+   try {
     res.status(200).json(req.user)
+   } catch (error) {
+    return res.status(500).json({ message: err.message });
+   }
 }
