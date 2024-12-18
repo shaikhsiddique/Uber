@@ -12,6 +12,7 @@ import CaptianHome from './pages/CaptianHome'
 import CaptianProtectedWrapper from './pages/CaptianProtectedWrapper'
 import CaptianLogout from './pages/CaptianLogout';
 import Riding from './pages/Riding'
+import CaptianRiding from './pages/CaptianRiding'
 function App() {
   return (
     <>
@@ -28,6 +29,7 @@ function App() {
       <Route path='/captian/signup' element={<CaptianSignup/>} />
       <Route path = "/captian/home" element={<CaptianProtectedWrapper><CaptianHome/></CaptianProtectedWrapper>}/>
       <Route path='/captian/logout' element={<CaptianProtectedWrapper><CaptianLogout/></CaptianProtectedWrapper>} />
+      <Route path='/captian/riding' element={<CaptianProtectedWrapper><CaptianRiding/></CaptianProtectedWrapper>}/>
     </Routes>
     </>
   )

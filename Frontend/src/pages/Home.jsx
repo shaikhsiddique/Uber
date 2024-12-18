@@ -7,6 +7,8 @@ import VehiclePanel from "../components/VehiclePanel";
 import ConfirmRide from "../components/ConfirmRide";
 import WaitingForDriver from "../components/WaitingForDriver";
 import LookingForDriver from "../components/LookingForDriver";
+import { Link } from "react-router-dom";
+
 
 function Home() {
   const panelRef = useRef(null);
@@ -110,7 +112,7 @@ function Home() {
           alt=""
         />
       </div>
-      <div className="h-screen w-full flex flex-col justify-end absolute top-0 ">
+      <div className="h-screen w-full flex flex-col justify-end absolute top-0   ">
         <div className="h-[30%] bg-white p-5 relative w-full">
           <h5
             ref={panelCloseRef}
